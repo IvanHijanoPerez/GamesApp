@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GamesApp</string>
+    <string name="check_connection">Error: Check your Internet connection / Failed loading data</string>
+    <string name="unknown">Unknown</string>
+    <string name="name">Name:</string>
+    <string name="companies">Companies:</string>
+    <string name="genres">Genres:</string>
+    <string name="platforms">Platforms:</string>
+    <string name="game">Game</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GamesApp</string>
+    <string name="check_connection">Error: Comprueba tu conexión a internet / Algo ha fllado cargando los datos</string>
+    <string name="unknown">Desconocido</string>
+    <string name="name">Nombre:</string>
+    <string name="companies">Compañía/s:</string>
+    <string name="genres">Géneros:</string>
+    <string name="platforms">Plataformas:</string>
+    <string name="game">Juego</string>
+</resources>
