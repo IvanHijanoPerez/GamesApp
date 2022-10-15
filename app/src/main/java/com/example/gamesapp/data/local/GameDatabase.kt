@@ -12,6 +12,6 @@ import com.example.gamesapp.domain.model.Game
     version = 4,
 )
 @TypeConverters(Converters::class)
-abstract class GameDatabase: RoomDatabase() {
-    abstract  val gameDao: GameDao
+abstract class GameDatabase : RoomDatabase() {
+    abstract val gameDao: GameDao
 }

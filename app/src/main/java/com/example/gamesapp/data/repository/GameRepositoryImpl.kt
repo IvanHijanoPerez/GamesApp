@@ -14,15 +14,19 @@ class GameRepositoryImpl @Inject constructor(
 
     override suspend fun getGamesFromApi(): List<Game> {
         val offset = (0..210637).shuffled().last()
-        val games = api.getGames("name, cover.image_id, genres.name, platforms.name, involved_companies.company.name", offset.toString(), "20")
-        return if (!games.isNullOrEmpty()) {
+        val games = api.getGames(
+            "name, cover.image_id, genres.name, platforms.name, involved_companies.company.name",
+            offset.toString(),
+            "20"
+        )
+        return if (games.isNotEmpty()) {
             games.map { it.toGame() }
         } else {
             emptyList()
         }
     }
 
-     override suspend fun getGamesFromDatabase(): List<Game> {
+    override suspend fun getGamesFromDatabase(): List<Game> {
         return dao.getGames()
     }
 

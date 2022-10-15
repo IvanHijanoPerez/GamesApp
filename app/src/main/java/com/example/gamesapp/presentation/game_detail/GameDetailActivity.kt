@@ -1,8 +1,8 @@
 package com.example.gamesapp.presentation.game_detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.api.igdb.utils.ImageSize
 import com.api.igdb.utils.ImageType
@@ -23,7 +23,7 @@ class GameDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        val gameId = intent.getIntExtra("gameId",0)
+        val gameId = intent.getIntExtra("gameId", 0)
 
         viewModel.onCreate(gameId)
 
@@ -31,22 +31,23 @@ class GameDetailActivity : AppCompatActivity() {
             supportActionBar!!.title = it.name
             binding.gameNameDetail.text = it.name
             var genres = it.genres.joinToString(separator = "\n")
-            if(genres.isNullOrEmpty()){
+            if (genres.isEmpty()) {
                 genres = getString(R.string.unknown)
             }
             var platforms = it.platforms.joinToString(separator = "\n")
-            if(platforms.isNullOrEmpty()){
+            if (platforms.isEmpty()) {
                 platforms = getString(R.string.unknown)
             }
             var companies = it.companies.joinToString(separator = "\n")
-            if(companies.isNullOrEmpty()){
+            if (companies.isEmpty()) {
                 companies = getString(R.string.unknown)
             }
-            binding.gameGenres.text =  genres
+            binding.gameGenres.text = genres
             binding.gamePlatforms.text = platforms
             binding.gameCompanies.text = companies
             val urlImage = imageBuilder(it.cover, ImageSize.HD, ImageType.PNG)
-            Glide.with(this).load(urlImage).placeholder(R.drawable.ic_error_24).into(binding.gameCoverDetail)
+            Glide.with(this).load(urlImage).placeholder(R.drawable.ic_error_24)
+                .into(binding.gameCoverDetail)
         })
     }
 

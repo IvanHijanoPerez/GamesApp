@@ -19,19 +19,19 @@ fun GameDto.toGame(): Game {
     var genresValue = emptyList<String>()
     var platformsValue = emptyList<String>()
 
-    if(cover != null){
+    if (cover != null) {
         coverValue = cover.image_id
     }
 
-    if(involved_companies != null){
+    if (involved_companies != null) {
         companiesValue = involved_companies.map { it.company.name }
     }
 
-    if(genres != null){
+    if (genres != null) {
         genresValue = genres.map { it.name }
     }
 
-    if(platforms != null){
+    if (platforms != null) {
         platformsValue = platforms.map { it.name }
     }
 

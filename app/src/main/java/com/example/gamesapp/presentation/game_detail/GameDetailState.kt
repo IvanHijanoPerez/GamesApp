@@ -1,7 +1,5 @@
 package com.example.gamesapp.presentation.game_detail
 
-import com.example.gamesapp.domain.model.Game
-
 data class GameDetailState(
     val id: Int = -1,
     val name: String = "",

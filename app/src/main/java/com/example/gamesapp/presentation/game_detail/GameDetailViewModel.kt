@@ -1,11 +1,9 @@
 package com.example.gamesapp.presentation.game_detail
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.gamesapp.domain.use_case.get_game.GetGameUseCase
-import com.example.gamesapp.presentation.game_list.GameListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

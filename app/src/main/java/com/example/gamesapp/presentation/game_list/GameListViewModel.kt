@@ -16,12 +16,16 @@ class GameListViewModel @Inject constructor(
 
     val gameState = MutableLiveData<GameListState>()
 
+    init {
+        getGames(false)
+    }
+
     fun getGames(refresh: Boolean) {
         viewModelScope.launch {
             gameState.postValue(GameListState(isLoading = true))
             val result = getGamesUseCase(refresh)
 
-            if(!result.isNullOrEmpty()){
+            if (result.isNotEmpty()) {
                 gameState.postValue(GameListState(games = result))
             } else {
                 gameState.postValue(GameListState(error = "Error"))
@@ -33,7 +37,7 @@ class GameListViewModel @Inject constructor(
         viewModelScope.launch {
 
             val result = getGamesUseCase.loadMoreGames()
-            if(!result.isNullOrEmpty()){
+            if (result.isNotEmpty()) {
                 gameState.postValue(GameListState(isLoading = true))
                 delay(1000)
                 gameState.postValue(GameListState(games = result))

@@ -1,10 +1,10 @@
 package com.example.gamesapp.presentation.game_list
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +27,7 @@ class GameListActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val swipeRefreshLayout = binding.swipeRefreshLayout
 
-        viewModel.getGames(false)
+
 
         viewModel.gameState.observe(this, Observer {
             binding.progressBar.isVisible = it.isLoading

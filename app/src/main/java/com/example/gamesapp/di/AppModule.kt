@@ -1,6 +1,5 @@
 package com.example.gamesapp.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.example.gamesapp.common.Constants
@@ -32,7 +31,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, GameDatabase::class.java,DATABASE_NAME).fallbackToDestructiveMigration().allowMainThreadQueries().build()
+        Room.databaseBuilder(context, GameDatabase::class.java, DATABASE_NAME)
+            .fallbackToDestructiveMigration().build()
 
     @Provides
     @Singleton

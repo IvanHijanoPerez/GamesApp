@@ -19,7 +19,8 @@ class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(game: Game, context: Context) {
         binding.gameName.text = game.name
         val urlImage = imageBuilder(game.cover, ImageSize.LOGO_MEDIUM, ImageType.PNG)
-        Glide.with(context).load(urlImage).placeholder(R.drawable.ic_error_24).into(binding.gameCover)
+        Glide.with(context).load(urlImage).placeholder(R.drawable.ic_error_24)
+            .into(binding.gameCover)
         binding.gameCardView.setOnClickListener {
             val intent = Intent(context, GameDetailActivity::class.java)
             intent.putExtra("gameId", game.id)

@@ -1,8 +1,6 @@
 package com.example.gamesapp.domain.repository
 
-import com.example.gamesapp.data.remote.dto.GameDto
 import com.example.gamesapp.domain.model.Game
-import kotlinx.coroutines.flow.Flow
 
 interface GameRepository {
 

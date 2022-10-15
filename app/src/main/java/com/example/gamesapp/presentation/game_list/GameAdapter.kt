@@ -10,7 +10,7 @@ import com.example.gamesapp.domain.model.Game
 
 class GameAdapter(
     val context: Context,
-    val listGames: List<Game>
+    private val listGames: List<Game>
 ) :
     RecyclerView.Adapter<GameViewHolder>() {
 
